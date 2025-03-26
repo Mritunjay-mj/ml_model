@@ -1,0 +1,7 @@
+Feature importance for GradientBoosting model:
+
+diff1_output0: 0.939956
+rollmean3_output0: 0.031529
+lag1_output0: 0.011924
+rollstd3_output0: 0.005925
+lag2_output0: 0.003025
