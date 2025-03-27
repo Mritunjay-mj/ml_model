@@ -1,0 +1,5 @@
+Group 1: Stations [1, 15, 21, 37]
+Group 2: Stations [2, 3, 6, 7, 8, 9, 10, 11, 18, 20, 25, 26, 27, 29, 34]
+Group 3: Stations [16, 31, 33]
+Group 4: Stations [4, 12, 14, 19, 22, 24, 28, 30, 35, 38, 39, 40]
+Group 5: Stations [5, 13, 17, 23, 32, 36]

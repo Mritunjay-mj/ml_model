@@ -1,0 +1,22 @@
+Feature importance for GradientBoosting model:
+
+diff1_output0: 0.911190
+diff2_output0: 0.034993
+diff3_output0: 0.018256
+rollmax3_output0: 0.015766
+ewm5_output0: 0.007622
+rollmin3_output0: 0.004535
+rollmean3_output0: 0.003285
+ewm10_output0: 0.000690
+lag3_output0: 0.000630
+rollstd7_output0: 0.000569
+ewm20_output0: 0.000145
+rollstd3_output0: 0.000143
+rollstd14_output17: 0.000116
+svd_141: 0.000101
+svd_49: 0.000098
+lag5_output6: 0.000056
+svd_13: 0.000053
+svd_185: 0.000051
+svd_62: 0.000050
+rollmax7_output16: 0.000046

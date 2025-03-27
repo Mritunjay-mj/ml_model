@@ -1,0 +1,147 @@
+Enhanced Power Predictor - Run started at 2025-03-27 04:43:43.443197
+
+[2025-03-27 04:43:43] Starting enhanced power prediction pipeline...
+[2025-03-27 04:43:43] Loading input and output data...
+[2025-03-27 04:43:44] Input data shape: (419, 10000)
+[2025-03-27 04:43:44] Output data shape: (419, 40)
+[2025-03-27 04:43:44] Analyzing data patterns...
+[2025-03-27 04:43:44] Plotting power output patterns...
+[2025-03-27 04:43:45] Analyzing temporal patterns...
+[2025-03-27 04:43:46] Analyzing station correlations...
+[2025-03-27 04:43:46] Calculating output statistics...
+[2025-03-27 04:43:46] Output range: [0.00 to 93.00]
+[2025-03-27 04:43:46] Average output: 75.45
+[2025-03-27 04:43:46] Average standard deviation: 22.31
+[2025-03-27 04:43:46] Clustering stations into groups...
+[2025-03-27 04:43:46] Created 5 station groups:
+[2025-03-27 04:43:46]   Group 1: 4 stations
+[2025-03-27 04:43:46]   Group 2: 15 stations
+[2025-03-27 04:43:46]   Group 3: 3 stations
+[2025-03-27 04:43:46]   Group 4: 12 stations
+[2025-03-27 04:43:46]   Group 5: 6 stations
+[2025-03-27 04:43:46] Preprocessing data...
+[2025-03-27 04:43:46] Scaling input and output data...
+[2025-03-27 04:43:46] Performing SVD with 300 components...
+[2025-03-27 04:43:49] Explained variance: 0.7759
+[2025-03-27 04:43:49] Creating advanced forecast features...
+[2025-03-27 04:43:49] Final feature set: 1546 features
+[2025-03-27 04:43:49] Splitting data with time-aware approach...
+[2025-03-27 04:43:49] Data split: Train=287, Val=62, Test=62
+[2025-03-27 04:43:49] Training baseline models...
+[2025-03-27 04:43:49] Training LinearRegression baseline models...
+[2025-03-27 04:43:50]   LinearRegression: Trained 10/40 models
+[2025-03-27 04:43:50]   LinearRegression: Trained 20/40 models
+[2025-03-27 04:43:51]   LinearRegression: Trained 30/40 models
+[2025-03-27 04:43:52]   LinearRegression: Trained 40/40 models
+[2025-03-27 04:43:52]   LinearRegression: Average validation R²: -1.1760, Time: 2.6s
+[2025-03-27 04:43:52] Training Ridge baseline models...
+[2025-03-27 04:43:52]   Ridge: Trained 10/40 models
+[2025-03-27 04:43:52]   Ridge: Trained 20/40 models
+[2025-03-27 04:43:52]   Ridge: Trained 30/40 models
+[2025-03-27 04:43:52]   Ridge: Trained 40/40 models
+[2025-03-27 04:43:52]   Ridge: Average validation R²: -1.1747, Time: 0.8s
+[2025-03-27 04:43:52] Training Lasso baseline models...
+[2025-03-27 04:43:52]   Lasso: Trained 10/40 models
+[2025-03-27 04:43:53]   Lasso: Trained 20/40 models
+[2025-03-27 04:43:53]   Lasso: Trained 30/40 models
+[2025-03-27 04:43:53]   Lasso: Trained 40/40 models
+[2025-03-27 04:43:53]   Lasso: Average validation R²: 0.9252, Time: 0.2s
+[2025-03-27 04:43:53] Training RandomForest baseline models...
+[2025-03-27 04:45:51]   RandomForest: Trained 10/40 models
+[2025-03-27 04:47:47]   RandomForest: Trained 20/40 models
+[2025-03-27 04:49:47]   RandomForest: Trained 30/40 models
+[2025-03-27 04:51:46]   RandomForest: Trained 40/40 models
+[2025-03-27 04:51:46]   RandomForest: Average validation R²: 0.9626, Time: 473.5s
+[2025-03-27 04:51:46] Training GradientBoosting baseline models...
+[2025-03-27 04:53:07]   GradientBoosting: Trained 10/40 models
+[2025-03-27 04:54:28]   GradientBoosting: Trained 20/40 models
+[2025-03-27 04:55:48]   GradientBoosting: Trained 30/40 models
+[2025-03-27 04:57:09]   GradientBoosting: Trained 40/40 models
+[2025-03-27 04:57:09]   GradientBoosting: Average validation R²: 0.9664, Time: 323.0s
+[2025-03-27 04:57:09] Training XGBoost baseline models...
+[2025-03-27 04:58:27]   XGBoost: Trained 10/40 models
+[2025-03-27 04:59:46]   XGBoost: Trained 20/40 models
+[2025-03-27 05:01:03]   XGBoost: Trained 30/40 models
+[2025-03-27 05:02:22]   XGBoost: Trained 40/40 models
+[2025-03-27 05:02:22]   XGBoost: Average validation R²: 0.9597, Time: 312.8s
+[2025-03-27 05:02:22] Best baseline model: GradientBoosting with R²: 0.9664
+[2025-03-27 05:02:22] Analyzing baseline model performance...
+[2025-03-27 05:02:22] Best model distribution across stations:
+[2025-03-27 05:02:22]   GradientBoosting: 29 stations (72.5%)
+[2025-03-27 05:02:22]   RandomForest: 5 stations (12.5%)
+[2025-03-27 05:02:22]   Lasso: 2 stations (5.0%)
+[2025-03-27 05:02:22]   XGBoost: 4 stations (10.0%)
+[2025-03-27 05:02:22] Selecting important features...
+[2025-03-27 05:02:23] Selected 20 features (top 1.3%) that account for 80.0% of importance
+[2025-03-27 05:02:23] Feature importance by group:
+[2025-03-27 05:02:23]   SVD: 0.0011
+[2025-03-27 05:02:23]   Lagged: 0.0010
+[2025-03-27 05:02:23]   Rolling Mean: 0.0034
+[2025-03-27 05:02:23]   Rolling Std: 0.0010
+[2025-03-27 05:02:23]   Rolling Min/Max: 0.0204
+[2025-03-27 05:02:23]   Diff: 0.9645
+[2025-03-27 05:02:23]   EWM: 0.0085
+[2025-03-27 05:02:23]   Fourier: 0.0000
+[2025-03-27 05:02:23]   Interaction: 0.0000
+[2025-03-27 05:02:23] Optimizing hyperparameters for GradientBoosting...
+[2025-03-27 05:02:23] Optimizing for group 1 (representative station 1)...
+[2025-03-27 05:03:50]   Best parameters: {'learning_rate': 0.05, 'max_depth': 3, 'n_estimators': 300, 'subsample': 0.8}
+[2025-03-27 05:03:50]   Best score: 0.0122 MSE
+[2025-03-27 05:03:50] Optimizing for group 2 (representative station 2)...
+[2025-03-27 05:05:18]   Best parameters: {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+[2025-03-27 05:05:18]   Best score: 0.9672 MSE
+[2025-03-27 05:05:18] Optimizing for group 3 (representative station 16)...
+[2025-03-27 05:06:46]   Best parameters: {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+[2025-03-27 05:06:46]   Best score: 1.0159 MSE
+[2025-03-27 05:06:46] Optimizing for group 4 (representative station 4)...
+[2025-03-27 05:08:14]   Best parameters: {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+[2025-03-27 05:08:14]   Best score: 1.1744 MSE
+[2025-03-27 05:08:14] Optimizing for group 5 (representative station 5)...
+[2025-03-27 05:09:42]   Best parameters: {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+[2025-03-27 05:09:42]   Best score: 1.2965 MSE
+[2025-03-27 05:09:42] Most common parameter values:
+[2025-03-27 05:09:42]   n_estimators: 100 (used for 36 stations)
+[2025-03-27 05:09:42]   learning_rate: 0.01 (used for 36 stations)
+[2025-03-27 05:09:42]   max_depth: 3 (used for 40 stations)
+[2025-03-27 05:09:42]   subsample: 0.7 (used for 36 stations)
+[2025-03-27 05:09:42] Training optimized models...
+[2025-03-27 05:09:44]   Trained 10/40 optimized models
+[2025-03-27 05:09:46]   Trained 20/40 optimized models
+[2025-03-27 05:09:47]   Trained 30/40 optimized models
+[2025-03-27 05:09:49]   Trained 40/40 optimized models
+[2025-03-27 05:09:49] Optimized models average validation R²: -0.1112
+[2025-03-27 05:09:49] Creating stacking ensemble model...
+[2025-03-27 05:09:49] Building stacking ensemble using: ['GradientBoosting', 'RandomForest', 'XGBoost']
+[2025-03-27 05:09:50] Stacking ensemble test R²: 0.9716
+[2025-03-27 05:09:50] Ensemble outperforms GradientBoosting (0.9716 > 0.9664)
+[2025-03-27 05:09:50] Evaluating all models on test data...
+[2025-03-27 05:09:50] LinearRegression - Test MSE: 1.6137, RMSE: 1.2703, MAE: 0.9742, Avg R²: -0.6161
+[2025-03-27 05:09:50] Ridge - Test MSE: 1.6129, RMSE: 1.2700, MAE: 0.9739, Avg R²: -0.6152
+[2025-03-27 05:09:50] Lasso - Test MSE: 0.0642, RMSE: 0.2533, MAE: 0.1690, Avg R²: 0.9414
+[2025-03-27 05:09:51] RandomForest - Test MSE: 0.0356, RMSE: 0.1886, MAE: 0.0988, Avg R²: 0.9692
+[2025-03-27 05:09:51] GradientBoosting - Test MSE: 0.0319, RMSE: 0.1786, MAE: 0.0695, Avg R²: 0.9725
+[2025-03-27 05:09:51] XGBoost - Test MSE: 0.0359, RMSE: 0.1896, MAE: 0.0780, Avg R²: 0.9702
+[2025-03-27 05:09:51] Optimized - Test MSE: 1.0857, RMSE: 1.0420, MAE: 0.6137, Avg R²: -0.0412
+[2025-03-27 05:09:51] Ensemble - Test MSE: 0.0333, RMSE: 0.1824, MAE: 0.0798, Avg R²: 0.9716
+[2025-03-27 05:09:51] Best model (Ensemble) in original scale:
+[2025-03-27 05:09:51]   MSE: 18.5494
+[2025-03-27 05:09:51]   RMSE: 4.3069
+[2025-03-27 05:09:51]   MAE: 1.8066
+[2025-03-27 05:09:51]   Overall R²: 0.9646
+[2025-03-27 05:09:51] Creating evaluation visualizations...
+[2025-03-27 05:09:52] R² distribution: 40 stations with positive R², 0 with negative R²
+[2025-03-27 05:09:52] 
+==================================================
+[2025-03-27 05:09:52] FINAL MODEL PERFORMANCE SUMMARY
+[2025-03-27 05:09:52] ==================================================
+[2025-03-27 05:09:52] Best Model: Ensemble
+[2025-03-27 05:09:52] Test R² Score: 0.9716
+[2025-03-27 05:09:52] Test RMSE (normalized): 0.1824
+[2025-03-27 05:09:52] Test RMSE (original scale): 4.3069
+[2025-03-27 05:09:52] Test MAE (original scale): 1.8066
+[2025-03-27 05:09:52] Model Accuracy: 0.9202 (1 - normalized MAE)
+[2025-03-27 05:09:52] ==================================================
+
+[2025-03-27 05:09:52] Saving best model (Ensemble)...
+[2025-03-27 05:09:54] Model and components saved to power_model_20250327_044343/best_model
+[2025-03-27 05:09:54] Pipeline completed successfully in 1570.9 seconds (26.2 minutes)!
